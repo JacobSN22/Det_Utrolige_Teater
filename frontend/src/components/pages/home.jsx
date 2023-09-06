@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Header } from '../partials/header'
 import { Footer } from '../partials/footer'
 import axios from 'axios';
+import { Login } from '../partials/login';
 
 export const Home = () => {
 
@@ -21,6 +22,7 @@ export const Home = () => {
   return (
     <div>Home
       <Header />
+      <Login />
       <section>
         <div >
           {images && images.map(item => {
