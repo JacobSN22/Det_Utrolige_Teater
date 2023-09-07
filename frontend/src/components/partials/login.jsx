@@ -1,10 +1,10 @@
 import axios from 'axios'
-import React, { useContext } from 'react'
+import React from 'react'
 import { useAuth } from '../provider/authprovider'
 
 export const Login = () => {
     const { loginData, setLoginData } = useAuth()
-    
+    // console.log(loginData);
 
     const submitHandle = async e => {
         const formdata = new URLSearchParams()
@@ -14,7 +14,7 @@ export const Login = () => {
         const endpoint = `http://localhost:4000/login`
         try {
             const result = await axios.post(endpoint, formdata)
-            handleSessionData(result.data.access_token);
+            handleSessionData(result.data);
         } catch(err) {
             console.error(`Kunne ikke logge ind: ${err}`);
         }
@@ -22,6 +22,7 @@ export const Login = () => {
 
     const handleSessionData = data => {
         if(data) {
+            // console.log(data);
             sessionStorage.setItem("token", JSON.stringify(data))
             setLoginData(data)
         }
@@ -35,7 +36,7 @@ export const Login = () => {
 
   return (
     <>
-    {!loginData ? (
+    {!loginData.access_token ? (
     <form method="POST">
         <div>
             <input type="text" name='username' placeholder='email'/><br />
@@ -48,7 +49,7 @@ export const Login = () => {
     </form>
     ) : (
         <div>
-            <p>Du er logged ind</p>
+            <p>Du er logget ind</p>
             <button onClick={() => Logout()}>Log ud</button>
         </div>
     )

@@ -28,8 +28,8 @@ export const Skuespillere = () => {
                 <h1>Skuespillere</h1>
                 <div className='container'>
                   <img key={item.id} src={`http://localhost:4000/Assets/Images/actors/${item.image}`} alt="Billed" />
-                  <h3>{item.name}</h3>
-                  <p>{item.description}</p>
+                  <h3 key={item.id} >{item.name}</h3>
+                  <p key={item.id}>{item.description}</p>
                   <button>LÆS MERE</button>
                 </div>
               </>
