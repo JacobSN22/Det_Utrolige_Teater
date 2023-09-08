@@ -30,16 +30,17 @@ export const Home = () => {
             {images && images.map(item => {
               return (
                 <>
-                  <div className='container'>
-                    <div>
+                  <div className='headline'>
+                    <div className='headline_text'>
                       <p>STOR SCENE</p>
                       <p>28. APRIL - 30 APRIL 2023</p>
 
                       <h2>Fyrtøjet</h2>
                       <h3>BØRNEFORFATTER</h3>
                     </div>
-
-                    <img key={item.id} src={`http://localhost:4000/Assets/Images/events/medium/${item.image}`} alt="Billed" />
+                    <div className='img_fit'>
+                      <img key={item.id} src={`http://localhost:4000/Assets/Images/events/medium/${item.image}`} alt="Billed" />
+                    </div>
                   </div>
 
                   <div className='grid'>
@@ -52,8 +53,8 @@ export const Home = () => {
                         <p>2. JUNI - 6. JUNI 2023</p>
                         <h2>Downtown<br />Revyen</h2>
                         <h3>AF MICHEAL ENGLER</h3>
-                        <button>LÆS MERE</button>
-                        <button>KØB BILLET</button>
+                        <button className='tertiær'>LÆS MERE</button>
+                        <button className='primær'>KØB BILLET</button>
                       </div>
 
                     </div>
@@ -62,29 +63,34 @@ export const Home = () => {
                       <div className='image'>
                         <img key={item.id} src={`http://localhost:4000/Assets/Images/events/medium/${item.image}`} alt="Billed" />
                       </div>
-                      <p>FRISCENEN</p>
-                      <p>13. MAJ - 17. MAJ 2023</p>
-                      <h2>Mit<br />Nordkraft</h2>
-                      <h3>MUSIKTEATER</h3>
-                      <button>LÆS MERE</button>
-                      <button>KØB BILLET</button>
+                      <div className='art_text'>
+                        <p>FRISCENEN</p>
+                        <p>13. MAJ - 17. MAJ 2023</p>
+                        <h2>Mit<br />Nordkraft</h2>
+                        <h3>MUSIKTEATER</h3>
+                        <button className='tertiær'>LÆS MERE</button>
+                        <button className='primær'>KØB BILLET</button>
+                      </div>
+
                     </div>
 
                     <div className='art'>
                       <div className='image'>
                         <img key={item.id} src={`http://localhost:4000/Assets/Images/events/medium/${item.image}`} alt="Billed" />
                       </div>
+                      <div className='art_text'>
+                        <p>LILLE SCENE</p>
+                        <p>23. DECEMBER - 25. DECEMBER 2022</p>
+                        <h2>Det lever<br />i skyggerne</h2>
+                        <h3>AF ENMAS GARCIA</h3>
+                        <button className='tertiær'>LÆS MERE</button>
+                        <button className='primær'>KØB BILLET</button>
+                      </div>
 
-                      <p>LILLE SCENE</p>
-                      <p>23. DECEMBER - 25. DECEMBER 2022</p>
-                      <h2>Det lever<br />i skyggerne</h2>
-                      <h3>AF ENMAS GARCIA</h3>
-                      <button>LÆS MERE</button>
-                      <button>KØB BILLET</button>
                     </div>
                   </div>
 
-                  <div>
+                  <div className='buttonright'>
                     <button>SE ALLE FORESTILLINGER</button>
                   </div>
                 </>

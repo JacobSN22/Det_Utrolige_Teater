@@ -19,29 +19,34 @@ export const Events = () => {
   }, []);
 
   return (
-    <div>Home
+
+    <div>
       <Header />
       <Login />
-        <div >
-          {images && images.map(item => {
-            return (
-              <>
-                <div className='container'>
-                <img key={item.id} src={`http://localhost:4000/Assets/Images/events/medium/${item.image}`} alt="Billed" />
-                  <div>
-                    <p>STOR SCENE</p>
-                    <p>28. APRIL - 30 APRIL 2023</p>
-                    
-                    <h2>Fyrtøjet</h2>
-                    <h3>BØRNEFORFATTER</h3>
-                  </div>
-                  
-                </div>
-              </>
-            )
+      <div >
+        {images && images.map(item => {
+          return (
+            <>
+              <div className='container'>
+              <div className='headline'>
+                    <div className='headline_text'>
+                      <p>STOR SCENE</p>
+                      <p>28. APRIL - 30 APRIL 2023</p>
 
-          })}
-        </div>
+                      <h2>Fyrtøjet</h2>
+                      <h3>BØRNEFORFATTER</h3>
+                    </div>
+                    <div className='img_fit'>
+                      <img key={item.id} src={`http://localhost:4000/Assets/Images/events/medium/${item.image}`} alt="Billed" />
+                    </div>
+                  </div>
+
+              </div>
+            </>
+          )
+
+        })}
+      </div>
       <Footer />
     </div>
   )

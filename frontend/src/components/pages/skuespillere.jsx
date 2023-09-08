@@ -9,6 +9,8 @@ export const Skuespillere = () => {
 
   useEffect(() => {
     const getdata = async () => {
+
+      //Henter id, name, image of description fra vores url
       const url = `http://localhost:4000/actors?attributes=id, name, image,description`;
       const result = await axios.get(url)
       // console.log(result.data);
